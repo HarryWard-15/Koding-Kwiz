@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.main-section {
+    display: block;
+    text-align: center;
+    color: black;
+}
+
+.main-section h1 {
+    font-size: 50px;
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.main-section p {
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.button {
+    background: purple;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 50px;
+}
+
+.button a {
+    color: white;
+};
