@@ -15,13 +15,30 @@
     </header>
     <main>
         <section class="main-section">
+            <div class="container">
             <h1 class="header">Koding Kwiz</h1>
             <p>Welcome to my coding quiz!</p>
             <p>Within this quiz you will be asked a series of questions about JavaScript and its functionality, for each incorrect answer you will be deducted 5secs from your timer, after all the questions are complete, you will receive a score and be able to record that score and view it at a later date in the "View Highscores" page in the top left of the screen.</p>
             <button class="button" data-state="home">Start Quiz</button>
+            </div>
+        </section>
+            <section class="question">
+                <div class="container">
+                <h2 class="ask"></h2>
+                <div class="box">A</div>
+                <div class="box">B</div>
+                <div class="box">C</div>
+                <div class="box">D</div>
+                </div>
+        </section>
+        <section class="scoreEntry">
+            <div class="container">
+            <h2>Enter Your Name</h2>
+            <input type="text" class="name" placeholder="Enter your name">
+            <button class="button1">Submit Scores</button>
+            </div>
         </section>
     </main>
-
   <script src="./assets/script.js"></script>
 </body>
 </html>
