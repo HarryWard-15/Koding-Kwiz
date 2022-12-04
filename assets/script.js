@@ -12,6 +12,9 @@ var a = document.querySelector(".a");
 var b = document.querySelector(".b");
 var c = document.querySelector(".c");
 var d = document.querySelector(".d");
+var bottom = document.querySelector(".bottom");
+var correct = document.querySelector(".correct");
+var wrong = document.querySelector(".wrong");
 
 var highscores = JSON.parse(localStorage.getItem("highscore"));
 
@@ -79,7 +82,6 @@ button1.addEventListener("click", function(event) {
 
 
 function timer() {
-  timer.endTimer = endTimer;
     var timeInterval = setInterval(function () {
       timerEl.textContent = timeLeft;
       timeLeft--;
@@ -89,7 +91,7 @@ function timer() {
         clearInterval(timeInterval);
       }
     }, 1000);
-
+    timer.endTimer = endTimer;
     function endTimer() {
       clearInterval(timeInterval);
     }
@@ -108,9 +110,14 @@ function checkAnswer(i) {
   console.log(selectAnswerData);
   console.log(questions[questionNumber-1]["answer"]);
   if (selectAnswerData == questions[questionNumber-1]["answer"]) {
-    console.log("correct");
+    bottom.style.display = "block";
+    wrong.style.display = "none";
+    correct.style.display = "block";
   } else {
     timeLeft = timeLeft - 15;
+    bottom.style.display = "block";
+    correct.style.display = "none";
+    wrong.style.display = "block";
   }
   nextQuestion();
 }
@@ -132,6 +139,7 @@ function endQuiz() {
   question.style.display = "none";
   scoreEntry.style.display = "block";
   timer.endTimer();
+  timerEl.textContent = timeLeft;
 };
 
 function saveHighscore() {
