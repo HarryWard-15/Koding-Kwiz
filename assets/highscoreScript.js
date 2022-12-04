@@ -1,4 +1,4 @@
-saveHighscore(); // calling fucntion from script.js to initialize scoreboard data.
+// saveHighscore(); // calling fucntion from script.js to initialize scoreboard data.
 
 var olEl = document.querySelector(".scoreboard");
 
