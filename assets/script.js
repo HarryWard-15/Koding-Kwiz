@@ -66,7 +66,6 @@ var questions = [
 for(let i=0; i<answer.length; i++) {
   answer[i].addEventListener("click", function() {
     nextQuestion();
-    console.log("Im wokring");
   });
 }
 
@@ -120,10 +119,7 @@ function endQuiz() {
 function saveHighscore() {
   const nameStr = document.getElementsByClassName("name")[0];
   const nameStrValue = nameStr.value;
-  console.log(nameStrValue);
-  console.log(timeLeft);
   highscores[nameStrValue] = timeLeft;
-  console.log(highscores);
   var highscoreObject = JSON.stringify(highscores);
   localStorage.setItem("highscore", highscoreObject);
 };
