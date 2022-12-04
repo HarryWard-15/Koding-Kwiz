@@ -65,13 +65,18 @@ var questions = [
 ];
 for(let i=0; i<answer.length; i++) {
   answer[i].addEventListener("click", function() {
-    nextQuestion();
+    checkAnswer(i);
   });
 }
 
 button.addEventListener("click", function(event) {
     startQuiz();
 });
+
+button1.addEventListener("click", function(event) {
+  saveHighscore();
+});
+
 
 function timer() {
   timer.endTimer = endTimer;
@@ -96,6 +101,19 @@ function startQuiz() {
   mainSection.style.display = "none";
   question.style.display = "block";
 };
+
+function checkAnswer(i) {
+  var selectAnswer = document.getElementsByClassName("box")[i];
+  var selectAnswerData = selectAnswer.dataset["key"];
+  console.log(selectAnswerData);
+  console.log(questions[questionNumber-1]["answer"]);
+  if (selectAnswerData == questions[questionNumber-1]["answer"]) {
+    console.log("correct");
+  } else {
+    timeLeft = timeLeft - 15;
+  }
+  nextQuestion();
+}
 
 function nextQuestion() {
   if (questionNumber == 5) {
@@ -124,6 +142,3 @@ function saveHighscore() {
   localStorage.setItem("highscore", highscoreObject);
 };
 
-button1.addEventListener("click", function(event) {
-  saveHighscore();
-});
