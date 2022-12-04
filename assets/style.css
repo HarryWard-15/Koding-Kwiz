@@ -60,8 +60,8 @@ a {
     color: white;
     background-color: purple;
     border-radius: 10px;
-    width: 200px;
-    padding: 2px;
+    width: 300px;
+    padding: 5px;
     margin: 5px auto;
 }
 
@@ -78,6 +78,11 @@ ol {
     width: 60%;
     margin:auto;
     text-align: left;
+
+}
+
+ol li{
+    padding: 3px;
 }
 
 li:nth-child(odd) {
@@ -127,5 +132,34 @@ li:nth-child(odd) {
 .button:hover {
     background: violet;
     transition: background 0.2s ease-in-out;
+}
+.clearScores {
+    background: purple;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+}
+.backHome {
+    margin-top: 20px;
+    background: purple;
+    color: white;
+    padding: 10px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+}
+.clearScores:hover {
+    background: violet;
+    transition: background 0.2s ease-in-out;
+}
+.backHome:hover {
+    background: violet;
+    transition: background 0.2s ease-in-out;
+}
+
+.insideButton {
+    color: white;
 }
 

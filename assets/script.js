@@ -8,8 +8,16 @@ var question = document.querySelector(".question");
 var asking = document.querySelector(".ask");
 var scoreEntry = document.querySelector(".scoreEntry");
 var button1 = document.querySelector(".button1");
+var a = document.querySelector(".a");
+var b = document.querySelector(".b");
+var c = document.querySelector(".c");
+var d = document.querySelector(".d");
 
 var highscores = JSON.parse(localStorage.getItem("highscore"));
+
+if (highscores == null) {
+    highscores = {key: "0"};
+}
 
 var questionNumber = 0;
 var timeLeft = 100;
@@ -67,6 +75,7 @@ button.addEventListener("click", function(event) {
 });
 
 function timer() {
+  timer.endTimer = endTimer;
     var timeInterval = setInterval(function () {
       timerEl.textContent = timeLeft;
       timeLeft--;
@@ -76,6 +85,10 @@ function timer() {
         clearInterval(timeInterval);
       }
     }, 1000);
+
+    function endTimer() {
+      clearInterval(timeInterval);
+    }
   };
 
 function startQuiz() {
@@ -89,7 +102,11 @@ function nextQuestion() {
   if (questionNumber == 5) {
     endQuiz();
   } else {
-  asking.textContent = questions[questionNumber];
+  asking.textContent = questions[questionNumber]["question"];
+  a.textContent = questions[questionNumber]["a"];
+  b.textContent = questions[questionNumber]["b"];
+  c.textContent = questions[questionNumber]["c"];
+  d.textContent = questions[questionNumber]["d"];
   questionNumber++;
   }
 };
@@ -97,22 +114,20 @@ function nextQuestion() {
 function endQuiz() {
   question.style.display = "none";
   scoreEntry.style.display = "block";
+  timer.endTimer();
 };
 
 function saveHighscore() {
   const nameStr = document.getElementsByClassName("name")[0];
   const nameStrValue = nameStr.value;
+  console.log(nameStrValue);
+  console.log(timeLeft);
   highscores[nameStrValue] = timeLeft;
   console.log(highscores);
   var highscoreObject = JSON.stringify(highscores);
   localStorage.setItem("highscore", highscoreObject);
-  resetQuiz();
 };
 
 button1.addEventListener("click", function(event) {
   saveHighscore();
 });
-
-function resetQuiz() {
-  window.location.reload();
-}
