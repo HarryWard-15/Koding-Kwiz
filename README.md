@@ -30,7 +30,7 @@ THEN I can save my initials and score
 
 ## Installation
 
-![passwordgen img](./assets/mockup.PNG)
+![passwordgen img](./assets/mockup.png)
 Live Link: https://harryward-15.github.io/Password-Generator/
 
 ## Usage
