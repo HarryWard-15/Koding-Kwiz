@@ -107,8 +107,6 @@ function startQuiz() {
 function checkAnswer(i) {
   var selectAnswer = document.getElementsByClassName("box")[i];
   var selectAnswerData = selectAnswer.dataset["key"];
-  console.log(selectAnswerData);
-  console.log(questions[questionNumber-1]["answer"]);
   if (selectAnswerData == questions[questionNumber-1]["answer"]) {
     bottom.style.display = "block";
     wrong.style.display = "none";
